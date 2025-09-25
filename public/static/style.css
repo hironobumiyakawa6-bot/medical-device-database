@@ -1,1 +1,73 @@
-h1 { font-family: Arial, Helvetica, sans-serif; }
+/* 医療機器データベース カスタムCSS */
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    color: #6b7280;
+}
+
+.loading:before {
+    content: '';
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid #e5e7eb;
+    border-top: 2px solid #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 0.5rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* テーブルスタイル調整 */
+table {
+    border-collapse: collapse;
+}
+
+table td, table th {
+    border: 1px solid #e5e7eb;
+}
+
+/* ボタンのホバーエフェクト強化 */
+.btn-hover:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* フォーム要素のフォーカス効果 */
+input:focus, textarea:focus, select:focus {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    .space-x-4 > * + * {
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+    
+    .flex {
+        flex-direction: column;
+    }
+}
+
+/* プリント対応 */
+@media print {
+    nav, button, .bg-blue-500, .bg-green-500, .bg-red-500 {
+        display: none !important;
+    }
+    
+    .shadow {
+        box-shadow: none !important;
+    }
+}
