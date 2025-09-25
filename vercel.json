@@ -1,0 +1,21 @@
+{
+  "functions": {
+    "src/index.tsx": {
+      "runtime": "@vercel/node"
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/src/index.tsx"
+    },
+    {
+      "src": "/static/(.*)",
+      "dest": "/public/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/src/index.tsx"
+    }
+  ]
+}
